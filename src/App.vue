@@ -7,7 +7,7 @@
 			>
 			</div>
 		</template>
-		<li>
+		<li :active="$route.path === '/'">
 			<router-link to="/">
 				Home
 			</router-link>
