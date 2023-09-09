@@ -1,7 +1,7 @@
 <template>
 	<div
 		:class="{'vp-mobile': mobile, 'vp-open': open}"
-		class="vp-topmenu relative"
+		class="vp-topmenu relative z-20"
 	>
 
 		<div class="vp-logo">
