@@ -131,12 +131,12 @@
 			<section class="pb-14">
 				<button
 					@click="$router.push('/')"
-					class="mr-3 p-3 bg-slate-200 transition-shadow hover:drop-shadow-lg drop-shadow"
+					class="rounded mr-3 p-3 bg-slate-200 transition-shadow hover:drop-shadow-lg drop-shadow"
 				>
 					Home
 				</button><button
 					@click="$router.push('/contact')"
-					class="p-3 bg-purple-400 from-purple-500 bg-gradient-to-br hover:bg-purple-600 hover:from-purple-600 text-white duration-300 transition hover:drop-shadow-lg drop-shadow"
+					class="rounded p-3 bg-purple-400 from-purple-500 bg-gradient-to-br hover:bg-purple-600 hover:from-purple-600 text-white duration-300 transition hover:drop-shadow-lg drop-shadow"
 				>
 					Contact ⇾
 				</button>
@@ -157,16 +157,4 @@
 	};
 
 </script>
-<style scoped>
-	section button {
-		border: none;
-		border-top-left-radius: 8px;
-		border-top-right-radius: 8px;
-		border-bottom-left-radius: 8px;
-		border-bottom-right-radius: 8px;
-		font-size: 17px;
-		cursor: pointer;
-		transition: .5s ease background;
-	}
-
-</style>
+<style scoped></style>
