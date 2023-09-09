@@ -128,7 +128,8 @@
 				<div class="">
 				</div>
 			</section>
-			<section class="pb-14"><button
+			<section class="pb-14">
+				<button
 					@click="$router.push('/')"
 					class="mr-3 p-3 bg-slate-200 transition-shadow hover:drop-shadow-lg drop-shadow"
 				>
@@ -138,7 +139,8 @@
 					class="p-3 bg-purple-400 from-purple-500 bg-gradient-to-br hover:bg-purple-600 hover:from-purple-600 text-white duration-300 transition hover:drop-shadow-lg drop-shadow"
 				>
 					Contact ⇾
-				</button></section>
+				</button>
+			</section>
 		</main>
 	</div>
 </template>
