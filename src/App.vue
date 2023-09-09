@@ -22,29 +22,33 @@
 				Contact
 			</router-link>
 		</li>
-		<li><span>
+		<li>
+			<span>
 				More
 			</span>
 			<ul>
 				<li>List item 1</li>
 				<li>
+					List item 2
 					<ul>
 						<li>
+							List item 1
 							<ul>
 								<li>List item 1</li>
 								<li>List item 2</li>
 								<li>
+									List item 3
 									<ul>
 										<li>List item 1</li>
 										<li>List item 2</li>
 										<li>List item 3</li>
-									</ul>List item 3
+									</ul>
 								</li>
-							</ul>List item 1
+							</ul>
 						</li>
 						<li>List item 2</li>
 						<li>List item 3</li>
-					</ul>List item 2
+					</ul>
 				</li>
 				<li>List item 3</li>
 			</ul>

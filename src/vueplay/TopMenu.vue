@@ -345,6 +345,7 @@ export default {
 
 .vp-topmenu.vp-mobile li:has(ul) {
 	padding-bottom: 0px;
+	padding-right: 0px;
 }
 
 .vp-topmenu.vp-mobile ul {
