@@ -1,5 +1,5 @@
 <template>
-	<div class="bg-slate-50 flex flex-col h-screen overflow-auto">
+	<div class="bg-slate-50 flex flex-col overflow-auto">
 		<header class="">
 			<div
 				style="background-size:contain;background-position:center;background-repeat:no-repeat;width:266px;height:125px;margin-right:auto;margin-left:auto;margin-top:40px;position:relative;max-width:calc(100% - 100px);margin-bottom:-20px;left:5px"
