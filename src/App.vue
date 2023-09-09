@@ -20,7 +20,7 @@
 				Home
 			</router-link>
 		</li>
-		<li>
+		<li :active="$route.path.includes('/about')">
 			<svg
 				xmlns="http://www.w3.org/2000/svg"
 				viewBox="0 0 24 24"
@@ -37,7 +37,7 @@
 				About
 			</router-link>
 		</li>
-		<li>
+		<li :active="$route.path.includes('/more')">
 			<svg
 				xmlns="http://www.w3.org/2000/svg"
 				viewBox="0 0 24 24"
@@ -81,7 +81,7 @@
 				<li>List item 3</li>
 			</ul>
 		</li>
-		<li>
+		<li :active="$route.path.includes('/contact')">
 			<svg
 				xmlns="http://www.w3.org/2000/svg"
 				viewBox="0 0 24 24"
