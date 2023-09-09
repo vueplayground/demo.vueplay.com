@@ -147,7 +147,6 @@ export default {
 	--button-bg-hover-color: rgba(174, 195, 190, 1);
 	--button-text-color: rgba(14, 58, 62, 1);
 
-	position: absolute;
 	display: flex;
 	width: 100%;
 	height: 80px;
