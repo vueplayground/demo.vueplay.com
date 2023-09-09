@@ -1,8 +1,14 @@
 <template>
-    <router-view /> </template>
+	<TopMenu></TopMenu><router-view />
+</template>
 <script>
-    export default {
-        data: () => ({})
-    };
+	import TopMenu from '@/vueplay/TopMenu.vue';
+	export default {
+		components: {
+			TopMenu: TopMenu
+		},
+		data: () => ({})
+	};
+
 </script>
 <style></style>
