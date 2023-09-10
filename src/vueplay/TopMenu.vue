@@ -19,7 +19,7 @@
 			</slot>
 		</div>
 
-		<menu>
+		<menu @click="open=false">
 			<slot>
 				<li :active="true">
 					<router-link to="/">
