@@ -326,6 +326,12 @@ export default {
 	top: 100%;
 	display: block;
 	width: 100%;
+	height: calc(100vh - 100%);
+	overflow: auto;
+}
+
+.vp-topmenu.vp-mobile menu>li {
+	height: auto;
 }
 
 .vp-topmenu.vp-mobile li {
@@ -359,7 +365,7 @@ export default {
 	content: '';
 	display: inline-block;
 	width: auto;
-	margin-right: -4px;
+	margin-right: 0px;
 }
 
 .vp-topmenu.vp-mobile ul li::before {
