@@ -1,5 +1,6 @@
 <template>
-	<ProfileMenu style="border-style:solid;border-color:#dededeff;border-bottom-width:2px"></ProfileMenu>
+	<ProfileMenu :dark="darkmode">
+	</ProfileMenu>
 	<TopMenu
 		class="relative"
 		:dark="darkmode"
