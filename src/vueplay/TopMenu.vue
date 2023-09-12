@@ -82,9 +82,9 @@
 		</menu>
 
 		<div class="vp-end-menu">
+			<div class="vp-divider"/>
 			<slot name="end-before"></slot>
 			<slot name="end">
-				<div class="vp-divider"/>
 				<div @click="forceDark = !forceDark">
 					<svg
 						v-if="darkmode"
@@ -528,6 +528,7 @@ export default {
 	display: none;
 }
 
+.vp-topmenu .vp-end-menu > .vp-divider:only-child,
 .vp-topmenu.vp-mobile .vp-end-menu .vp-divider {
 	display: none;
 }
