@@ -296,12 +296,22 @@
 	}
 
 	.vp-profilemenu menu>li[active=true] {
-		border-top: 3px solid var(--border-color);
+		border-top: 1px solid var(--border-color);
 		padding-top: 7px;
 	}
 
 	.vp-profilemenu.dark menu>li[active=true] {
-		border-top: 3px solid var(--dark-border-color);
+		border-top: 1px solid var(--dark-border-color);
+	}
+
+	.vp-profilemenu.vp-mobile menu>li[active=true] {
+		border-top: none;
+		border-bottom: 3px solid var(--border-color);
+	}
+
+	.vp-profilemenu.vp-mobile.dark menu>li[active=true] {
+		border-top: none;
+		border-bottom: 3px solid var(--dark-border-color);
 	}
 
 	.vp-profilemenu menu li[active=true] {
