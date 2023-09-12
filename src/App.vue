@@ -25,26 +25,17 @@
 			<ul>
 				<li>List item 1</li>
 				<li>
-					List item 2
 					<ul>
-						<li>
-							List item 1
-							<ul>
-								<li>List item 1</li>
-								<li>List item 2</li>
-								<li>
-									List item 3
-									<ul>
-										<li>List item 1</li>
-										<li>List item 2</li>
-										<li>List item 3</li>
-									</ul>
-								</li>
-							</ul>
+						<li><router-view>
+								Secret Content
+							</router-view>
 						</li>
-						<li>List item 2</li>
+						<li>
+							List item 2
+						</li>
 						<li>List item 3</li>
 					</ul>
+					List item 2
 				</li>
 				<li>List item 3</li>
 			</ul>
