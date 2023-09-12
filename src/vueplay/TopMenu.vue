@@ -229,7 +229,14 @@ export default {
 .vp-topmenu menu>li[active=true] {
 	border-bottom: 3px solid rgba(246, 171, 49, 1);
 	padding-top: 12px;
+}
+
+.vp-topmenu menu li[active=true] {
 	font-weight: 600;
+}
+
+.vp-topmenu menu li[active=true] ul {
+	font-weight: normal;
 }
 
 .vp-topmenu menu>li:hover>ul {

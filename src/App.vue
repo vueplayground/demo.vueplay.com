@@ -24,11 +24,12 @@
 			</span>
 			<ul>
 				<li>List item 1</li>
-				<li>
+				<li :active="$route.path.includes('/more/secret')">
 					<ul>
-						<li><router-view>
+						<li :active="$route.path.includes('/more/secret')">
+							<router-link to="/more/secret">
 								Secret Content
-							</router-view>
+							</router-link>
 						</li>
 						<li>
 							List item 2
