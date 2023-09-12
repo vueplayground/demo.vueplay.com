@@ -25,6 +25,7 @@
 			<ul>
 				<li>List item 1</li>
 				<li :active="$route.path.includes('/more/secret')">
+					List item 2
 					<ul>
 						<li :active="$route.path.includes('/more/secret')">
 							<router-link to="/more/secret">
@@ -36,7 +37,6 @@
 						</li>
 						<li>List item 3</li>
 					</ul>
-					List item 2
 				</li>
 				<li>List item 3</li>
 			</ul>
