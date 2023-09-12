@@ -1,13 +1,17 @@
 <template>
 	<div
-		:class="{'vp-mobile': mobile, 'vp-open': open}"
+		:class="{'vp-mobile': mobile, 'vp-open': open, 'dark': darkmode}"
 		class="vp-topmenu relative z-20"
 	>
 
 		<div class="vp-logo">
 			<slot name="logo">
 				<router-view to="/" style="display: inline-flex">
-					<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="orange" class="ml-4 w-12">
+					<svg
+						xmlns="http://www.w3.org/2000/svg"
+						viewBox="0 0 24 24"
+						class="ml-4 w-12 vp-demo-icon"
+					>
 						<path fill-rule="evenodd"
 							d="M12.963 2.286a.75.75 0 00-1.071-.136 9.742 9.742 0 00-3.539 6.177A7.547 7.547 0 016.648 6.61a.75.75 0 00-1.152-.082A9 9 0 1015.68 4.534a7.46 7.46 0 01-2.717-2.248zM15.75 14.25a3.75 3.75 0 11-7.313-1.172c.628.465 1.35.81 2.133 1a5.99 5.99 0 011.925-3.545 3.75 3.75 0 013.255 3.717z"
 							clip-rule="evenodd" />
@@ -77,6 +81,38 @@
 			</slot>
 		</menu>
 
+		<div class="vp-end-menu">
+			<slot name="end-before"></slot>
+			<slot name="end">
+				<div class="vp-divider"/>
+				<div @click="forceDark = !forceDark">
+					<svg
+						v-if="darkmode"
+						xmlns="http://www.w3.org/2000/svg"
+						fill="none"
+						viewBox="0 0 24 24"
+						stroke-width="1.5"
+						stroke="currentColor"
+						class="w-5 h-5 vp-moon"
+					>
+						<path stroke-linecap="round" stroke-linejoin="round" d="M21.752 15.002A9.718 9.718 0 0118 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 003 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 009.002-5.998z" />
+					</svg>
+					<svg
+						v-else
+						xmlns="http://www.w3.org/2000/svg"
+						fill="none"
+						viewBox="0 0 24 24"
+						stroke-width="1.5"
+						stroke="currentColor"
+						class="w-5 h-5 vp-sun"
+					>
+						<path stroke-linecap="round" stroke-linejoin="round" d="M12 3v2.25m6.364.386l-1.591 1.591M21 12h-2.25m-.386 6.364l-1.591-1.591M12 18.75V21m-4.773-4.227l-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0z" />
+					</svg>
+				</div>
+			</slot>
+			<slot name="end-after"></slot>
+		</div>
+
 		<div class="vp-mobile-icon" >
 			<button class="px-6" @click="open = !open">
 				<svg  xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
@@ -92,16 +128,59 @@
 
 <script>
 export default {
+	emits: ['darkmode'],
 	props: {
 		breakpoint: {
 			type: Number,
 			default: 568
+		},
+		dark: {
+			type: Boolean,
+			default: false
+		},
+		color: {
+			type: String,
+			default: 'rgba(14, 58, 62, 1)'
+		},
+		background: {
+			type: String,
+			default: 'rgba(240,240,240,1)'
+		},
+		hover: {
+			type: String,
+			default: 'rgba(220,220,220,1)'
+		},
+		border: {
+			type: String,
+			default: 'rgba(251,178,60,1)'
+		},
+		colorDark: {
+			type: String,
+			default: 'rgba(240,240,240,1)'
+		},
+		backgroundDark: {
+			type: String,
+			default: 'rgba(75,75,75,1)'
+		},
+		hoverDark: {
+			type: String,
+			default: 'rgba(50,50,50,1)'
+		},
+		borderDark: {
+			type: String,
+			default: 'rgba(130,130,130,1)'
 		}
 	},
 	data: () => ({
 		open: false,
-		mobile: false
+		mobile: false,
+		forceDark: false
 	}),
+	computed: {
+		darkmode() {
+			return this.dark || this.forceDark
+		}
+	},
 	watch: {
 		open(isOpen) {
 			if (isOpen) {
@@ -109,6 +188,9 @@ export default {
 			} else {
 				document.body.classList.remove('vp-hide-scroll')
 			}
+		},
+		forceDark(darkmode) {
+			this.$emit('darkmode', darkmode)
 		}
 	},
 	created() {
@@ -155,16 +237,40 @@ export default {
 }
 
 .vp-topmenu {
-	--bg-color: rgba(192, 216, 210, 1);
+	/*
+	--bg-color: rgba(240,240,240,1);
 	--button-bg-color: var(--bg-color);
-	--button-bg-hover-color: rgba(174, 195, 190, 1);
+	--button-bg-hover-color: rgba(220,220,220,1);
 	--button-text-color: rgba(14, 58, 62, 1);
+	--border-color: rgba(251,178,60,1);
+
+	--dark-bg-color: rgba(75,75,75,1);
+	--dark-button-bg-color: var(--dark-bg-color);
+	--dark-button-bg-hover-color: rgba(50,50,50,1);
+	--dark-button-text-color: rgba(240,240,240,1);
+	--dark-border-color: rgba(130,130,130,1);
+	*/
+	--bg-color: v-bind(background);
+	--button-bg-color: var(--bg-color);
+	--button-bg-hover-color: v-bind(hover);
+	--button-text-color: v-bind(color);
+	--border-color: v-bind(border);
+
+	--dark-bg-color: v-bind(backgroundDark);
+	--dark-button-bg-color: var(--dark-bg-color);
+	--dark-button-bg-hover-color: v-bind(hoverDark);
+	--dark-button-text-color: v-bind(colorDark);
+	--dark-border-color: v-bind(borderDark);
 
 	display: flex;
 	transform: translateZ(0);
 	width: 100%;
 	height: 80px;
 	background-color: var(--bg-color);
+}
+
+.vp-topmenu.dark {
+	background-color: var(--dark-bg-color);
 }
 
 .vp-topmenu.vp-mobile.vp-open {
@@ -177,6 +283,39 @@ export default {
 .vp-topmenu .vp-logo {
 	display: inline-flex;
 	height: 100%;
+	color: var(--button-text-color);
+}
+
+.vp-topmenu.dark .vp-logo {
+	display: inline-flex;
+	height: 100%;
+	color: var(--dark-button-text-color);
+}
+
+.vp-topmenu .vp-demo-icon {
+	fill: var(--border-color);
+}
+
+.vp-topmenu.dark .vp-demo-icon {
+	fill: var(--dark-border-color);
+}
+
+.vp-topmenu .vp-moon {
+	fill: var(--button-text-color);
+	stroke: var(--button-text-color);
+}
+
+.vp-topmenu.dark .vp-moon {
+	fill: var(--dark-button-text-color);
+	stroke: var(--dark-button-text-color);
+}
+
+.vp-topmenu .vp-sun {
+	stroke: var(--button-text-color);
+}
+
+.vp-topmenu.dark .vp-sun {
+	stroke: var(--dark-button-text-color);
 }
 
 .vp-topmenu .vp-logo>* {
@@ -221,14 +360,22 @@ export default {
 	top: calc(50% + 1px);
 	right: 10px;
 	transform: translateY(-50%);
-	content: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI+CiAgPHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBkPSJNMTIuNTMgMTYuMjhhLjc1Ljc1IDAgMDEtMS4wNiAwbC03LjUtNy41YS43NS43NSAwIDAxMS4wNi0xLjA2TDEyIDE0LjY5bDYuOTctNi45N2EuNzUuNzUgMCAxMTEuMDYgMS4wNmwtNy41IDcuNXoiIGNsaXAtcnVsZT0iZXZlbm9kZCIgLz4KPC9zdmc+Cg==");
+	content: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGZpbGw9Im5vbmUiIHZpZXdCb3g9IjAgMCAyNCAyNCIgc3Ryb2tlLXdpZHRoPSIxLjUiIHN0cm9rZT0iY3VycmVudENvbG9yIiBjbGFzcz0idy01IGgtNSI+CiAgPHBhdGggc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBkPSJNMTkuNSA4LjI1bC03LjUgNy41LTcuNS03LjUiIC8+Cjwvc3ZnPgo=");
 	width: 15px;
 	margin-left: 10px;
 }
 
+.vp-topmenu.dark:not(.vp-mobile) menu>li:has(ul)::after {
+	filter: invert(100%);
+}
+
 .vp-topmenu menu>li[active=true] {
-	border-bottom: 3px solid rgba(246, 171, 49, 1);
+	border-bottom: 3px solid var(--border-color);
 	padding-top: 12px;
+}
+
+.vp-topmenu.dark menu>li[active=true] {
+	border-bottom: 3px solid var(--dark-border-color);
 }
 
 .vp-topmenu menu li[active=true] {
@@ -254,6 +401,11 @@ export default {
 	cursor: pointer;
 }
 
+.vp-topmenu.dark li {
+	background-color: var(--dark-button-bg-color);
+	color: var(--dark-button-text-color);
+}
+
 .vp-topmenu li > *:not(ul) {
 	display: inline-flex;
 	align-items: center;
@@ -273,10 +425,14 @@ export default {
 	background-color: var(--button-bg-hover-color);
 }
 
+.vp-topmenu.dark li:hover {
+	background-color: var(--dark-button-bg-hover-color);
+}
+
 .vp-topmenu ul {
 	display: none;
 	box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.2), 0 1px 2px -1px rgb(0 0 0 / 0.2);
-	border-radius: 4px;
+	border-radius: 2px;
 }
 
 .vp-topmenu ul li {
@@ -290,6 +446,10 @@ export default {
 	display: inline-block;
 	width: 11px;
 	margin-right: 10px;
+}
+
+.vp-topmenu.dark ul li:has(ul)::before {
+	filter: invert(100%);
 }
 
 .vp-topmenu ul li:first-child {
@@ -316,16 +476,68 @@ export default {
 	text-align: right;
 }
 
+.vp-topmenu .vp-end-menu {
+	display: flex;
+}
+
+.vp-topmenu .vp-end-menu > * {
+	display: inline-flex;
+	align-items: center;
+	height: 100%;
+}
+
+.vp-topmenu .vp-end-menu > *:not(.vp-divider) {
+	padding: 0px 15px;
+	cursor: pointer;
+}
+
+.vp-topmenu .vp-end-menu > *:not(.vp-divider):hover {
+	background-color: var(--button-bg-hover-color);
+}
+
+.vp-topmenu.dark .vp-end-menu > *:not(.vp-divider):hover {
+	background-color: var(--dark-button-bg-hover-color);
+}
+
+.vp-topmenu .vp-end-menu .vp-divider {
+	position: relative;
+	top: 35%;
+	height: 30%;
+	width: 1px;
+	background-color: var(--button-text-color);
+}
+
+.vp-topmenu.dark .vp-end-menu .vp-divider {
+	position: relative;
+	top: 35%;
+	height: 30%;
+	width: 1px;
+	background-color: var(--dark-button-text-color);
+}
+
 .vp-topmenu .vp-mobile-icon {
 	display: none;
 }
 
+.vp-topmenu.vp-mobile .vp-end-menu .vp-divider {
+	display: none;
+}
+
+.vp-topmenu.vp-mobile .vp-end-menu {
+	flex-grow: 1;
+	justify-content: flex-end;
+}
+
 .vp-topmenu.vp-mobile .vp-mobile-icon {
 	display: inline-flex;
-	flex-grow: 1;
     justify-content: flex-end;
 	align-items: center;
 	height: 100%;
+	color: var(--button-text-color);
+}
+
+.vp-topmenu.dark.vp-mobile .vp-mobile-icon {
+	color: var(--dark-button-text-color);
 }
 
 .vp-topmenu.vp-mobile .vp-mobile-icon button {
@@ -334,6 +546,10 @@ export default {
 
 .vp-topmenu.vp-mobile .vp-mobile-icon button:hover {
 	background-color: var(--button-bg-hover-color);
+}
+
+.vp-topmenu.dark.vp-mobile .vp-mobile-icon button:hover {
+	background-color: var(--dark-button-bg-hover-color);
 }
 
 .vp-topmenu.vp-mobile .vp-mobile-icon button svg {
@@ -346,6 +562,10 @@ export default {
 
 .vp-topmenu.vp-mobile li:has(ul:hover):hover {
 	background-color: var(--button-bg-color);
+}
+
+.vp-topmenu.dark.vp-mobile li:has(ul:hover):hover {
+	background-color: var(--dark-button-bg-color);
 }
 
 .vp-topmenu.vp-mobile li:hover>ul {
@@ -375,6 +595,10 @@ export default {
 	overflow: auto;
 	background-color: var(--bg-color);
 	transition: height .2s linear, opacity .3s linear;
+}
+
+.vp-topmenu.dark.vp-mobile.vp-open menu {
+	background-color: var(--dark-bg-color);
 }
 
 .vp-topmenu.vp-mobile menu>li {
