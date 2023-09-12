@@ -1,4 +1,5 @@
 <template>
+	<ProfileMenu style="border-style:solid;border-color:#dededeff;border-bottom-width:2px"></ProfileMenu>
 	<TopMenu
 		class="relative"
 		:dark="darkmode"
@@ -64,9 +65,11 @@
 	</div>
 </template>
 <script>
+	import ProfileMenu from '@/vueplay/ProfileMenu.vue';
 	import TopMenu from '@/vueplay/TopMenu.vue';
 	export default {
 		components: {
+			ProfileMenu: ProfileMenu,
 			TopMenu: TopMenu
 		},
 		data: () => ({
