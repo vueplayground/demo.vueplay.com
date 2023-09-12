@@ -484,11 +484,20 @@ export default {
 	display: inline-flex;
 	align-items: center;
 	height: 100%;
+	box-sizing: content-box;
 }
 
 .vp-topmenu .vp-end-menu > *:not(.vp-divider) {
-	padding: 0px 15px;
+	padding: 0px 5px;
 	cursor: pointer;
+}
+
+.vp-topmenu .vp-end-menu > *:not(.vp-divider):nth-child(2) {
+	padding-left: 15px;
+}
+
+.vp-topmenu .vp-end-menu > *:not(.vp-divider):last-child {
+	padding-right: 15px;
 }
 
 .vp-topmenu .vp-end-menu > *:not(.vp-divider):hover {
