@@ -102,6 +102,15 @@ export default {
 		open: false,
 		mobile: false
 	}),
+	watch: {
+		open(isOpen) {
+			if (isOpen) {
+				document.body.classList.add('vp-hide-scroll')
+			} else {
+				document.body.classList.remove('vp-hide-scroll')
+			}
+		}
+	},
 	created() {
 		this.onResize()
 		window.addEventListener('resize', this.onResize)
@@ -111,8 +120,7 @@ export default {
 	},
 	methods: {
 		onResize() {
-			this.mobile = window.innerWidth < this
-				.breakpoint
+			this.mobile = window.innerWidth < this.breakpoint
 		}
 	}
 };
@@ -141,6 +149,11 @@ export default {
 </style>
 
 <style>
+
+.vp-hide-scroll {
+	overflow: hidden;
+}
+
 .vp-topmenu {
 	--bg-color: rgba(192, 216, 210, 1);
 	--button-bg-color: var(--bg-color);
@@ -148,9 +161,17 @@ export default {
 	--button-text-color: rgba(14, 58, 62, 1);
 
 	display: flex;
+	transform: translateZ(0);
 	width: 100%;
 	height: 80px;
 	background-color: var(--bg-color);
+}
+
+.vp-topmenu.vp-mobile.vp-open {
+	position: fixed;
+	top: 0px;
+	left: 0px;
+	width: 100%;
 }
 
 .vp-topmenu .vp-logo {
@@ -303,12 +324,16 @@ export default {
 	background-color: var(--button-bg-hover-color);
 }
 
-.vp-topmenu.vp-mobile li:has(ul:hover):hover {
-	background-color: var(--button-bg-color);
+.vp-topmenu.vp-mobile .vp-mobile-icon button svg {
+	transition: transform .25s linear;
 }
 
-.vp-topmenu.vp-mobile menu {
-	display: none;
+.vp-topmenu.vp-mobile.vp-open .vp-mobile-icon button svg {
+	transform: rotate(180deg);
+}
+
+.vp-topmenu.vp-mobile li:has(ul:hover):hover {
+	background-color: var(--button-bg-color);
 }
 
 .vp-topmenu.vp-mobile li:hover>ul {
@@ -321,13 +346,23 @@ export default {
 	right: auto;
 }
 
-.vp-topmenu.vp-mobile.vp-open menu {
-	position: absolute;
+.vp-topmenu.vp-mobile menu {
+	position: fixed;
 	top: 100%;
-	display: block;
 	width: 100%;
+	height: 0px;
+	opacity: 0;
+	overflow: hidden;
+	display: block;
+	transition: height .1s linear, opacity .2s linear;
+}
+
+.vp-topmenu.vp-mobile.vp-open menu {
 	height: calc(100vh - 100%);
+	opacity: 1;
 	overflow: auto;
+	background-color: var(--bg-color);
+	transition: height .2s linear, opacity .3s linear;
 }
 
 .vp-topmenu.vp-mobile menu>li {
