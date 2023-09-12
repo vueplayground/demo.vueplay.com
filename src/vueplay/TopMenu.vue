@@ -378,7 +378,8 @@ export default {
 	position: relative;
 	display: block;
 	width: 100%;
-	margin: 0px;
+	/*margin: 0px;*/
+	margin-right: -4px;
 	text-align: left;
 	padding: 20px 0px 20px 20px;
 }
@@ -421,6 +422,16 @@ export default {
 .vp-topmenu.vp-mobile ul li ul li ul li::before {
 	content: '';
 	padding-left: 90px;
+}
+
+.vp-topmenu.vp-mobile ul li ul li ul li ul li::before {
+	content: '';
+	padding-left: 120px;
+}
+
+.vp-topmenu.vp-mobile ul li ul li ul li ul li ul li::before {
+	content: '';
+	padding-left: 150px;
 }
 
 </style>
