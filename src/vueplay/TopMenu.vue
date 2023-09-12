@@ -209,7 +209,7 @@ export default {
 }
 
 .vp-topmenu:not(.vp-mobile) menu>li:has(ul) {
-	padding-right: 5px;
+	padding-right: 35px;
 }
 
 .vp-topmenu:not(.vp-mobile) menu>li:has(ul):last-child {
@@ -217,6 +217,10 @@ export default {
 }
 
 .vp-topmenu:not(.vp-mobile) menu>li:has(ul)::after {
+	position: absolute;
+	top: calc(50% + 1px);
+	right: 10px;
+	transform: translateY(-50%);
 	content: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI+CiAgPHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBkPSJNMTIuNTMgMTYuMjhhLjc1Ljc1IDAgMDEtMS4wNiAwbC03LjUtNy41YS43NS43NSAwIDAxMS4wNi0xLjA2TDEyIDE0LjY5bDYuOTctNi45N2EuNzUuNzUgMCAxMTEuMDYgMS4wNmwtNy41IDcuNXoiIGNsaXAtcnVsZT0iZXZlbm9kZCIgLz4KPC9zdmc+Cg==");
 	width: 15px;
 	margin-left: 10px;
