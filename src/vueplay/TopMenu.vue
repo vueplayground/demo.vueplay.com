@@ -248,13 +248,14 @@ export default {
 	align-items: center;
 }
 
-.vp-topmenu li > *:not(ul)::after {
+.vp-topmenu li > *:not(ul)::before {
 	content: '';
 	position: absolute;
 	top: 0px;
 	left: 0px;
 	right: 0px;
 	bottom: 0px;
+	cursor: pointer;
 }
 
 .vp-topmenu li:hover {
