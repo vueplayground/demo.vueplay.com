@@ -63,8 +63,8 @@
 	</TopMenu>
 	<div class="inline-block relative sm:flex">
 		<LeftMenu
-			class="bg-slate-100 top-0 sticky h-full sm:inline-flex"
-			style="display:block;width:280px;background-color:#f0f0f0ff"
+			class="sm:w-96 w-4 bottom-0 bg-slate-100 top-0 sticky h-full sm:inline-flex"
+			style="display:block;background-color:#f0f0f0ff"
 		>
 			<li :active="$route.path.includes('/more')">
 				<span>
@@ -89,7 +89,7 @@
 					<li>List item 3</li>
 				</ul>
 			</li>
-		</LeftMenu><router-view class="relative block sm:inline-flex grow" />
+		</LeftMenu><router-view class="relative grow" />
 	</div>
 </template>
 <script>
