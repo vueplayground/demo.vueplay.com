@@ -62,7 +62,7 @@
 			</svg></template>
 	</TopMenu>
 	<div class="flex">
-		<LeftMenu class="h-full inline-flex fixed sm:inline-flex">
+		<LeftMenu class="h-full fixed sm:inline-flex">
 			<li :active="$route.path.includes('/more')">
 				<span>
 					More
