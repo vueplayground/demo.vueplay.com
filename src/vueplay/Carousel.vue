@@ -240,13 +240,14 @@
 		--dark-border-color: v-bind(borderDark);
 		display: block;
 		width: 100%;
+		aspect-ratio: 1.777/1;
 		background-color: var(--bg-color);
 	}
 
 	.vp-carousel-wrapper {
 		display: block;
 		width: 100%;
-		aspect-ratio: 1.777/1;
+		height: 100%;
 		overflow: auto;
 		white-space: nowrap;
 		scroll-behavior: auto;
