@@ -65,6 +65,7 @@
 		<LeftMenu
 			class="w-full sm:w-96 bottom-0 top-0 sticky h-full sm:inline-flex"
 			style="display:block"
+			:dark="darkmode"
 		>
 			<li :active="$route.path.includes('/more')">
 				<span>
