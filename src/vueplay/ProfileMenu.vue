@@ -338,6 +338,10 @@
 		cursor: pointer;
 	}
 
+	.vp-profilemenu ul li {
+		background-color: var(--button-bg-color);
+	}
+
 	.vp-profilemenu.vp-mobile li {
 		background-color: var(--button-bg-color);
 	}
@@ -347,6 +351,10 @@
 	}
 
 	.vp-profilemenu.dark.vp-mobile li {
+		background-color: var(--dark-button-bg-color);
+	}
+
+	.vp-profilemenu.dark ul li {
 		background-color: var(--dark-button-bg-color);
 	}
 

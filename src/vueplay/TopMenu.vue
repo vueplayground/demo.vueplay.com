@@ -400,12 +400,20 @@ export default {
 	cursor: pointer;
 }
 
+.vp-topmenu ul li {
+	background-color: var(--button-bg-color);
+}
+
 .vp-topmenu.vp-mobile li {
 	background-color: var(--button-bg-color);
 }
 
 .vp-topmenu.dark li {
 	color: var(--dark-button-text-color);
+}
+
+.vp-topmenu.dark ul li {
+	background-color: var(--dark-button-bg-color);
 }
 
 .vp-topmenu.dark.vp-mobile li {
