@@ -396,14 +396,20 @@ export default {
 	padding: 10px 10px;
 	margin: 0px;
 	display: inline-block;
-	background-color: var(--button-bg-color);
 	color: var(--button-text-color);
 	cursor: pointer;
 }
 
+.vp-topmenu.vp-mobile li {
+	background-color: var(--button-bg-color);
+}
+
 .vp-topmenu.dark li {
-	background-color: var(--dark-button-bg-color);
 	color: var(--dark-button-text-color);
+}
+
+.vp-topmenu.dark.vp-mobile li {
+	background-color: var(--dark-button-bg-color);
 }
 
 .vp-topmenu li > *:not(ul) {
