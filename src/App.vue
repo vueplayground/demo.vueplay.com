@@ -67,6 +67,11 @@
 			style="display:block"
 			:dark="darkmode"
 		>
+			<li :active="$route.path === '/'">
+				<router-link to="/">
+					Home
+				</router-link>
+			</li>
 			<li :active="$route.path.includes('/more')">
 				<span>
 					More
