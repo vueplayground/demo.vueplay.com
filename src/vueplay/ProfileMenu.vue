@@ -373,8 +373,12 @@
 		cursor: pointer;
 	}
 
-	.vp-logout:hover {
+	.vp-profilemenu .vp-logout:hover {
 		background-color: var(--button-bg-hover-color);
+	}
+
+	.vp-profilemenu.dark .vp-logout:hover {
+		background-color: var(--dark-button-bg-hover-color);
 	}
 
 	.vp-profilemenu li:hover {
