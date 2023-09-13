@@ -1,5 +1,18 @@
 <template>
 	<div class="bg-slate-50 flex flex-col overflow-auto">
+		<Carousel><img
+				src="@/assets/launch.png"
+				width="100"
+				height="100"
+			/><img
+				src="@/assets/demo-logo.webp"
+				width="100"
+				height="100"
+			/><img
+				src="@/assets/your-logo.png"
+				width="100"
+				height="100"
+			/></Carousel>
 		<header class="">
 			<div
 				style="background-size:contain;background-position:center;background-repeat:no-repeat;width:266px;height:125px;margin-right:auto;margin-left:auto;margin-top:40px;position:relative;max-width:calc(100% - 100px);margin-bottom:-20px;left:5px"
@@ -49,8 +62,11 @@
 	</div>
 </template>
 <script>
+	import Carousel from '@/vueplay/Carousel.vue';
 	export default {
-		components: {},
+		components: {
+			Carousel: Carousel
+		},
 		data: () => ({}),
 		methods: {
 			open(url) {
