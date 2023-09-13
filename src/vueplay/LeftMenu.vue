@@ -196,7 +196,6 @@
 
 	.vp-leftmenu.vp-mobile.vp-open {
 		position: fixed;
-		height: 80px;
 		top: 0px;
 		left: 0px;
 		width: 100%;
@@ -206,14 +205,6 @@
 		display: inline-flex;
 		flex-grow: 1;
 		justify-content: flex-end;
-	}
-
-	.vp-leftmenu menu>li:last-child {
-		padding-right: 20px;
-	}
-
-	.vp-leftmenu menu>li:first-child {
-		padding-right: 10px;
 	}
 
 	.vp-leftmenu menu>li[active=true] {
