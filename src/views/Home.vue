@@ -1,6 +1,9 @@
 <template>
 	<div class="bg-slate-50 flex flex-col overflow-auto">
-		<Carousel><img
+		<Carousel
+			class="mx-auto"
+			style="max-width:800px"
+		><img
 				src="@/assets/launch.png"
 				width="100"
 				height="100"
