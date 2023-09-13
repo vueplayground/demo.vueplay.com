@@ -1,5 +1,8 @@
 <template>
-	<div class="bg-slate-50 flex flex-col overflow-auto">
+	<div
+		class="bg-slate-50 flex flex-col overflow-auto"
+		style="position:relative"
+	>
 		<Carousel
 			class="md:m-6 md:mx-auto shadow-2xl shadow-slate-500 md:rounded-md mx-auto"
 			style="overflow:hidden;width:700px;max-width:calc(100% - 40px)"
