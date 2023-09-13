@@ -16,25 +16,12 @@
 				width="100"
 				height="100"
 			/></Carousel>
-		<header class="">
-			<div
-				style="background-size:contain;background-position:center;background-repeat:no-repeat;width:266px;height:125px;margin-right:auto;margin-left:auto;margin-top:40px;position:relative;max-width:calc(100% - 100px);margin-bottom:-20px;left:5px"
-				class="rounded-full logo"
-			>
-			</div>
-			<h1
-				style="width:calc(100% - 40px);margin:auto;margin-top:40px;margin-bottom:40px"
-				class="text-center text-xl"
-			>
-				Lorem ipsum dolor sit amet
-			</h1>
-		</header>
 		<main
-			style="width:100%"
+			style="width:100%;margin-top:85px"
 			class="grow"
 		>
 			<section
-				style="width:100%"
+				style="width:100%;padding-bottom:60px"
 				class="text-center"
 			>
 				<button
@@ -53,13 +40,6 @@
 				>
 					Contact ⇾
 				</button>
-			</section>
-			<section>
-				<div
-					style="background-size:contain;background-position:center;background-repeat:no-repeat;margin-right:auto;margin-left:auto;margin-top:70px;position:relative;margin-bottom:50px;max-width:calc(100% - 40px);aspect-ratio:1/.668;box-sizing:border-box;width:700px"
-					class="rounded-3xl shadow-slate-200 shadow-xl screenshot"
-				>
-				</div>
 			</section>
 		</main>
 	</div>
