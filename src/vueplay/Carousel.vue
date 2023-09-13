@@ -7,8 +7,19 @@
 			@click="previous"
 			class="vp-previous"
 		>
-			<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-				<path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
+			<svg
+				xmlns="http://www.w3.org/2000/svg"
+				fill="none"
+				viewBox="0 0 24 24"
+				stroke-width="1.5"
+				stroke="currentColor"
+				class="w-6 h-6"
+			>
+				<path
+					stroke-linecap="round"
+					stroke-linejoin="round"
+					d="M15.75 19.5L8.25 12l7.5-7.5"
+				/>
 			</svg>
 		</div>
 		<div
@@ -35,8 +46,19 @@
 			@click="next"
 			class="vp-next"
 		>
-			<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-				<path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+			<svg
+				xmlns="http://www.w3.org/2000/svg"
+				fill="none"
+				viewBox="0 0 24 24"
+				stroke-width="1.5"
+				stroke="currentColor"
+				class="w-6 h-6"
+			>
+				<path
+					stroke-linecap="round"
+					stroke-linejoin="round"
+					d="M8.25 4.5l7.5 7.5-7.5 7.5"
+				/>
 			</svg>
 		</div>
 	</div>
@@ -128,14 +150,16 @@
 					this.$refs.carousel.scrollLeft = this.$refs.carousel.clientWidth
 				}
 				const resizeObserver = new ResizeObserver(entries => {
-					this.scrollend({ target: this.$refs.carousel })
+					this.scrollend({
+						target: this.$refs.carousel
+					})
 				})
 				resizeObserver.observe(this.$refs.carousel)
 			},
 			previous() {
 				if (this.blocked) return
 				this.blocked = true
-				const previous =  this.$refs.carousel.scrollLeft - this.$refs.carousel.clientWidth
+				const previous = this.$refs.carousel.scrollLeft - this.$refs.carousel.clientWidth
 				if (previous <= 0) {
 					this.$refs.carousel.scrollLeft = this.$refs.carousel.scrollWidth
 					this.$refs.carousel.scrollTo({
@@ -186,26 +210,22 @@
 				if (this.blocked) return
 				const startOfLastImage = e.target.scrollWidth - e.target.clientWidth
 				const halfImage = e.target.clientWidth / 2
-				
 				if (e.target.scrollLeft < halfImage - 10) {
 					e.target.scrollLeft = startOfLastImage - halfImage
 				} else if (e.target.scrollLeft > startOfLastImage - halfImage + 10) {
 					e.target.scrollLeft = halfImage
 				}
-
 				this.active = Math.ceil((e.target.scrollLeft - e.target.clientWidth) / (e.target.scrollWidth - (e.target.clientWidth * 3)))
 				this.scrollend(e)
 			},
 			scrollend(e) {
 				if (this.timeout) clearTimeout(this.timeout)
 				this.timeout = setTimeout(() => {
-
 					// Get scroll data
 					const startOfLastImage = e.target.scrollWidth - e.target.clientWidth
 					const halfImage = e.target.clientWidth / 2
 					const currentPos = e.target.scrollLeft
 					const modulus = currentPos % e.target.clientWidth
-
 					if (modulus < halfImage) {
 						e.target.scrollTo({
 							left: currentPos - modulus,
@@ -217,13 +237,12 @@
 							behavior: 'smooth'
 						})
 					}
-
 					this.timeout = null
-
 				}, 100)
 			}
 		}
 	};
+
 </script>
 
 <style>
@@ -251,8 +270,10 @@
 		overflow: auto;
 		white-space: nowrap;
 		scroll-behavior: auto;
-		-ms-overflow-style: none;  /* Hide scrollbar Edge */
-  		scrollbar-width: none;  /* Hide scrollbar Firefox */
+		-ms-overflow-style: none;
+		/* Hide scrollbar Edge */
+		scrollbar-width: none;
+		/* Hide scrollbar Firefox */
 	}
 
 	/* Hide scrollbar Chrome, Safari and Opera */
@@ -260,11 +281,13 @@
 		display: none;
 	}
 
-	.vp-previous:hover, .vp-next:hover {
-		background-color: rgba(255,255,255,0.8);
+	.vp-previous:hover,
+	.vp-next:hover {
+		background-color: rgba(255, 255, 255, 0.8);
 	}
 
-	.vp-previous, .vp-next {
+	.vp-previous,
+	.vp-next {
 		position: absolute;
 		display: inline-flex;
 		justify-content: center;
@@ -275,7 +298,7 @@
 		left: 10px;
 		transform: translateY(-50%);
 		z-index: 10;
-		background-color: rgba(255,255,255,0.5);
+		background-color: rgba(255, 255, 255, 0.5);
 		cursor: pointer;
 		border-radius: 4px;
 	}
@@ -289,7 +312,7 @@
 		background-color: black;
 	}
 
-	.vp-carousel-wrapper > * {
+	.vp-carousel-wrapper>* {
 		display: inline-block;
 		width: 100%;
 		height: 100%;
@@ -309,12 +332,14 @@
 	.vp-node {
 		width: 20px;
 		height: 20px;
-		background-color: rgba(255,255,255,0.5);
+		background-color: rgba(255, 255, 255, 0.5);
 		border-radius: 50%;
 		cursor: pointer;
 	}
 
-	.vp-node:hover, .vp-node[active=true] {
-		background-color: rgba(255,255,255,0.8);
+	.vp-node:hover,
+	.vp-node[active=true] {
+		background-color: rgba(255, 255, 255, 0.8);
 	}
+
 </style>

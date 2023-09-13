@@ -8,11 +8,11 @@
 				width="100"
 				height="100"
 			/><img
-				src="@/assets/demo-logo.webp"
+				src="https://images.wallpaperscraft.com/image/single/pool_building_columns_990136_1600x900.jpg"
 				width="100"
 				height="100"
 			/><img
-				src="@/assets/your-logo.png"
+				src="https://images.wallpaperscraft.com/image/single/starry_sky_night_tree_117028_1600x900.jpg"
 				width="100"
 				height="100"
 			/></Carousel>
