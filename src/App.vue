@@ -5,10 +5,11 @@
 	>
 	</ProfileMenu>
 	<TopMenu
-		class="top-px sticky"
+		class="sticky"
 		:dark="darkmode"
 		@darkmode="darkmode=$event"
 		:breakpoint="640"
+		style="top:-0.5px"
 	>
 		<template v-slot:logo="">
 			<div
