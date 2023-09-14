@@ -6,7 +6,7 @@
 	>
 	</ProfileMenu>
 	<TopMenu
-		class="sticky"
+		class="shadow sticky"
 		:dark="darkmode"
 		@darkmode="darkmode=$event"
 		:breakpoint="640"
@@ -72,7 +72,7 @@
 		style="position:relative"
 	>
 		<SideMenu
-			class="order-1 sticky sm:w-full top-0 sm:inline-flex"
+			class="shadow order-1 sticky sm:w-full top-0 sm:inline-flex"
 			:dark="darkmode"
 			:breakpoint="640"
 		>
@@ -106,7 +106,7 @@
 			</li>
 		</SideMenu><router-view class="sm:order-2 grow order-3" />
 		<SideMenu
-			class="sticky inline-flex sm:order-3 order-2 sm:w-full top-0 sm:inline-flex"
+			class="shadow sticky inline-flex sm:order-3 order-2 sm:w-full top-0 sm:inline-flex"
 			:dark="darkmode"
 			:breakpoint="640"
 			:align="'right'"
