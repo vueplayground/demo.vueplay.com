@@ -100,6 +100,40 @@
 				</ul>
 			</li>
 		</SideMenu><router-view class="" />
+		<SideMenu
+			class="sticky sm:w-full top-0 sm:inline-flex"
+			:dark="darkmode"
+			:breakpoint="640"
+		>
+			<li :active="$route.path === '/'">
+				<router-link to="/">
+					Home
+				</router-link>
+			</li>
+			<li :active="$route.path.includes('/more')">
+				<span>
+					More
+				</span>
+				<ul>
+					<li>List item 1</li>
+					<li :active="$route.path.includes('/more/secret')">
+						List item 2
+						<ul>
+							<li :active="$route.path.includes('/more/secret')">
+								<router-link to="/more/secret">
+									Secret Content
+								</router-link>
+							</li>
+							<li>
+								List item 2
+							</li>
+							<li>List item 3</li>
+						</ul>
+					</li>
+					<li>List item 3</li>
+				</ul>
+			</li>
+		</SideMenu>
 	</div>
 </template>
 <script>
