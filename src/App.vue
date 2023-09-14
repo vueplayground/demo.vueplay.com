@@ -5,7 +5,7 @@
 	>
 	</ProfileMenu>
 	<TopMenu
-		class=""
+		class="top-px sticky"
 		:dark="darkmode"
 		@darkmode="darkmode=$event"
 		:breakpoint="640"
