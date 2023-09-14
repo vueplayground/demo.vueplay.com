@@ -170,6 +170,7 @@
 		transform: translateZ(0);
 		width: 250px;
 		max-width: 250px;
+		min-width: 250px;
 		background-color: var(--bg-color);
 	}
 

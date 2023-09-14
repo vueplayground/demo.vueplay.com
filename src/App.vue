@@ -105,7 +105,6 @@
 			:dark="darkmode"
 			:breakpoint="640"
 			:align="'right'"
-			style="max-width:250px"
 		>
 			<li :active="$route.path === '/'">
 				<router-link to="/">
