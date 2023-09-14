@@ -2,6 +2,7 @@
 	<ProfileMenu
 		:dark="darkmode"
 		:breakpoint="640"
+		style="height:50px"
 	>
 	</ProfileMenu>
 	<TopMenu
@@ -9,7 +10,7 @@
 		:dark="darkmode"
 		@darkmode="darkmode=$event"
 		:breakpoint="640"
-		style="top:-0.5px"
+		style="top:-0.5px;height:70px"
 	>
 		<template v-slot:logo="">
 			<div
