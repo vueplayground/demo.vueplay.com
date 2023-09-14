@@ -82,7 +82,7 @@
 		props: {
 			breakpoint: {
 				type: Number,
-				default: 568
+				default: 640
 			},
 			dark: {
 				type: Boolean,
@@ -178,6 +178,7 @@
 		display: flex;
 		transform: translateZ(0);
 		width: 250px;
+		max-width: 250px;
 		background-color: var(--bg-color);
 	}
 
@@ -187,11 +188,8 @@
 
 	.vp-leftmenu.vp-mobile {
 		height: 40px;
-		width: 60px;
-	}
-
-	.vp-leftmenu.vp-mobile:not(.vp-open) {
-		background-color: transparent;
+		width: 100%;
+		max-width: 100%;
 	}
 
 	.vp-leftmenu.vp-mobile.vp-open {
@@ -327,10 +325,12 @@
 		justify-content: flex-end;
 		align-items: center;
 		height: 100%;
+		background-color: var(--button-bg-color);
 		color: var(--button-text-color);
 	}
 
 	.vp-leftmenu.dark .vp-mobile-icon {
+		background-color: var(--dark-button-bg-color);
 		color: var(--dark-button-text-color);
 	}
 
@@ -375,9 +375,9 @@
 	.vp-leftmenu menu {
 		top: 100%;
 		width: 100%;
-		height: 0px;
-		opacity: 0;
-		overflow: hidden;
+		height: 100%;
+		background-color: var(--bg-color);
+		overflow: auto;
 		display: block;
 		transition: height .1s linear, opacity .2s linear;
 	}
@@ -387,28 +387,13 @@
 		top: 100%;
 		height: 0px;
 		opacity: 0;
-		overflow: hidden;
-		display: block;
-		transition: height .1s linear, opacity .2s linear;
 	}
 
 	.vp-leftmenu.vp-mobile.vp-open menu {
 		position: fixed;
 		top: 100%;
 		width: 100%;
-		height: 0px;
-		opacity: 0;
-		overflow: hidden;
-		display: block;
-		transition: height .1s linear, opacity .2s linear;
-	}
-
-	.vp-leftmenu menu {
 		height: calc(100vh - 100%);
-		opacity: 1;
-		overflow: auto;
-		background-color: var(--bg-color);
-		transition: height .2s linear, opacity .3s linear;
 	}
 
 	.vp-leftmenu.vp-mobile.vp-open menu {
