@@ -1,6 +1,6 @@
 <template>
 	<div
-		:class="{'vp-mobile': mobile, 'vp-open': open, 'dark': darkmode, 'z-10': !open, 'z-30': open}"
+		:class="{'vp-float': float, 'vp-mobile': mobile, 'vp-open': open, 'dark': darkmode, 'z-10': !open, 'z-30': open}"
 		:style="{'justify-content': align === 'right' ? 'flex-end' : 'flex-start'}"
 		class="vp-sidemenu relative"
 	>
@@ -10,7 +10,11 @@
 				class="px-4"
 				@click="open = !open"
 			>
-				<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+				<svg v-if="float" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+					<path stroke-linecap="round" stroke-linejoin="round" d="M19.5 12h-15" />
+				</svg>
+
+				<svg v-else xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
 					<path stroke-linecap="round" stroke-linejoin="round" d="M3.75 9h16.5m-16.5 6.75h16.5" />
 				</svg>
 			</button>
@@ -110,6 +114,10 @@
 			align: {
 				type: String,
 				default: 'left'
+			},
+			float: {
+				type: Boolean,
+				default: false
 			}
 		},
 		data: () => ({
@@ -182,10 +190,18 @@
 		height: 40px;
 		width: 100%;
 		max-width: 100%;
+		min-width: 0px;
+	}
+
+	.vp-sidemenu.vp-float.vp-mobile:not(.vp-open) {
+		position: absolute;
+		width: 50px;
+		max-width: 50px;
+		right: 0px;
 	}
 
 	.vp-sidemenu.vp-mobile.vp-open {
-		position: fixed;
+		position: fixed!important;
 		top: 0px;
 		left: 0px;
 		width: 100%;
