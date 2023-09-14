@@ -69,7 +69,7 @@
 		props: {
 			breakpoint: {
 				type: Number,
-				default: 640
+				default: 700
 			},
 			dark: {
 				type: Boolean,
@@ -168,9 +168,9 @@
 		--dark-border-color: v-bind(borderDark);
 		display: flex;
 		transform: translateZ(0);
-		width: 250px;
-		max-width: 250px;
-		min-width: 250px;
+		width: 220px;
+		max-width: 220px;
+		min-width: 220px;
 		background-color: var(--bg-color);
 	}
 
