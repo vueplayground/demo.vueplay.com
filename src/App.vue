@@ -68,7 +68,7 @@
 			</svg></template>
 	</TopMenu>
 	<div
-		class="sm:flex-row flex-col w-full relative flex"
+		class="max-w-full sm:flex-row flex-col w-full relative flex"
 		style="position:relative"
 	>
 		<SideMenu
