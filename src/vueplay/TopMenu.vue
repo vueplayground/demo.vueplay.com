@@ -1,7 +1,7 @@
 <template>
 	<div
-		:class="{'vp-mobile': mobile, 'vp-open': open, 'dark': darkmode}"
-		class="vp-topmenu relative z-20"
+		:class="{'vp-mobile': mobile, 'vp-open': open, 'z-20': !open, 'z-30': open, 'dark': darkmode}"
+		class="vp-topmenu relative"
 	>
 
 		<div class="vp-logo">
@@ -132,7 +132,7 @@ export default {
 	props: {
 		breakpoint: {
 			type: Number,
-			default: 568
+			default: 640
 		},
 		dark: {
 			type: Boolean,
