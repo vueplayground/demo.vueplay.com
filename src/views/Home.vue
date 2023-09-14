@@ -1,11 +1,11 @@
 <template>
 	<div
-		class="w-full max-w-full bg-slate-50 flex flex-col overflow-auto"
+		class="sm:px-6 w-full max-w-full bg-slate-50 flex flex-col overflow-auto"
 		style="position:relative"
 	>
 		<Carousel
-			class="sm:m-6 sm:mx-auto shadow-2xl shadow-slate-500 sm:rounded-md mx-auto"
-			style="overflow:hidden;width:700px;max-width:calc(100% - 40px)"
+			class="max-w-full sm:mx-auto sm:m-6 sm:shadow-2xl sm:shadow-slate-500 sm:rounded-md mx-auto"
+			style="overflow:hidden;width:700px"
 		><img
 				src="@/assets/launch.png"
 				width="100"
