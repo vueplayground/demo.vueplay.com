@@ -140,6 +140,14 @@
 			</li>
 		</SideMenu>
 	</div>
+	<footer
+		class="p-6 w-full"
+		:style="{ 'background-color': darkmode ? 'rgba(75,75,75,1)' : 'rgba(240,240,240,1)', 'color': darkmode ? '#fff' : '#000' }"
+	>
+		<h3 class="text-center">
+			Footer
+		</h3>
+	</footer>
 </template>
 <script>
 	import SideMenu from '@/vueplay/SideMenu.vue';
