@@ -1,6 +1,6 @@
 <template>
 	<div
-		:class="{'vp-mobile': mobile, 'vp-open': open, 'dark': darkmode, 'z-20': !open, 'z-30': open}"
+		:class="{'vp-mobile': mobile, 'vp-open': open, 'dark': darkmode, 'z-10': !open, 'z-30': open}"
 		:style="{'justify-content': align === 'right' ? 'flex-end' : 'flex-start'}"
 		class="vp-sidemenu relative"
 	>
