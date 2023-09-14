@@ -1,8 +1,8 @@
-""<template>
+<template>
 	<div
-		:class="{'vp-mobile': mobile, 'vp-open': open, 'dark': darkmode}"
+		:class="{'vp-mobile': mobile, 'vp-open': open, 'dark': darkmode, 'z-20': !open, 'z-30': open}"
 		:style="{'justify-content': align === 'right' ? 'flex-end' : 'flex-start'}"
-		class="vp-sidemenu relative z-20"
+		class="vp-sidemenu relative"
 	>
 
 		<div class="vp-mobile-icon">
