@@ -46,20 +46,6 @@
 								<li>
 									<span>How it works</span>
 								</li>
-								<li>
-									<span>FAQ</span>
-									<ul>
-										<li>
-											<span>How?</span>
-										</li>
-										<li>
-											Why?
-										</li>
-										<li>
-											<span>When?</span>
-										</li>
-									</ul>
-								</li>
 							</ul>
 						</li>
 						<li>
@@ -402,6 +388,10 @@
 		overflow: auto;
 		background-color: var(--bg-color);
 		transition: height .2s linear, opacity .3s linear;
+	}
+
+	.vp-leftmenu.dark.vp-mobile.vp-open menu {
+		background-color: var(--dark-bg-color);
 	}
 
 	.vp-leftmenu.dark menu {
