@@ -1,6 +1,6 @@
 <template>
 	<div
-		class="bg-slate-50 flex flex-col overflow-auto"
+		class="w-full max-w-full bg-slate-50 flex flex-col overflow-auto"
 		style="position:relative"
 	>
 		<Carousel
