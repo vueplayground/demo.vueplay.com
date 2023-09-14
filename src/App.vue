@@ -66,7 +66,7 @@
 			</svg></template>
 	</TopMenu>
 	<div class="w-full relative sm:flex">
-		<LeftMenu
+		<SideMenu
 			class="sticky sm:w-full top-0 sm:inline-flex"
 			:dark="darkmode"
 			:breakpoint="640"
@@ -99,16 +99,16 @@
 					<li>List item 3</li>
 				</ul>
 			</li>
-		</LeftMenu><router-view class="" />
+		</SideMenu><router-view class="" />
 	</div>
 </template>
 <script>
-	import LeftMenu from '@/vueplay/LeftMenu.vue';
+	import SideMenu from '@/vueplay/SideMenu.vue';
 	import ProfileMenu from '@/vueplay/ProfileMenu.vue';
 	import TopMenu from '@/vueplay/TopMenu.vue';
 	export default {
 		components: {
-			LeftMenu: LeftMenu,
+			SideMenu: SideMenu,
 			ProfileMenu: ProfileMenu,
 			TopMenu: TopMenu
 		},
