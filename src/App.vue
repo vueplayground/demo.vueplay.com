@@ -72,7 +72,7 @@
 		style="position:relative"
 	>
 		<SideMenu
-			class="shadow order-1 sticky sm:w-full top-0 sm:inline-flex"
+			class="border-gray-400 border-r border-solid order-1 sticky sm:w-full top-0 sm:inline-flex"
 			:dark="darkmode"
 			:breakpoint="640"
 		>
@@ -104,9 +104,12 @@
 					<li>List item 3</li>
 				</ul>
 			</li>
-		</SideMenu><router-view class="sm:order-2 grow order-3" />
+		</SideMenu><router-view
+			class="border-gray-300 border-b border-solid shadow-slate-200 sm:order-2 grow order-3"
+			style="min-height:calc(100vh - 320px)"
+		/>
 		<SideMenu
-			class="shadow sticky inline-flex sm:order-3 order-2 sm:w-full top-0 sm:inline-flex"
+			class="border-gray-400 border-l border-solid sticky inline-flex sm:order-3 order-2 sm:w-full top-0 sm:inline-flex"
 			:dark="darkmode"
 			:breakpoint="640"
 			:align="'right'"
@@ -143,8 +146,9 @@
 		</SideMenu>
 	</div>
 	<footer
-		class="p-6 w-full"
-		:style="{ 'background-color': darkmode ? 'rgba(75,75,75,1)' : 'rgba(240,240,240,1)', 'color': darkmode ? '#fff' : '#000' }"
+		class="justify-center items-center inline-flex p-6 w-full"
+		:style="{ 'background-color': darkmode ? 'rgba(75,75,75,1)' : 'rgba(60,60,90,1)', 'color': darkmode ? '#ccc' : '#ddd', 'box-shadow': darkmode ? '0 50vh 0 50vh rgba(75,75,75,1)' : '0 50vh 0 50vh rgba(240,240,240,1)' }"
+		style="height:200px"
 	>
 		<h3 class="text-center">
 			Footer
