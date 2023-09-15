@@ -7,7 +7,7 @@
 	>
 	</ProfileMenu>
 	<div
-		class="border-t-2 border-b sticky top-0"
+		class="border-t-2 border-b sticky top-0 z-3"
 		:style="'border-color:' + (darkmode ? '#555' : '')"
 	>
 		<TopMenu
