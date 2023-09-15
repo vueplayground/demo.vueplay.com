@@ -179,16 +179,17 @@
 			bgcolor: 'rgba(240,240,240,1)'
 		}),
 		watch: {
-			darkmode() {
-				this.bgcolor = this.darkmode ? '#4B4B4B' : 'rgba(240,240,240,1)';
+			darkmode(darkmode) {
+				document.body.style.backgroundColor = darkmode ? '#4B4B4B' : 'rgba(240,240,240,1)';
 			}
 		}
 	};
 
 </script>
 <style>
-	body {
-		background-color: v-bind('bgcolor');
+	body,
+	#app {
+		background-color: rgba(240, 240, 240, 1);
 	}
 
 	@media only screen and (max-width: 640px) {
