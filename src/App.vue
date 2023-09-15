@@ -3,10 +3,11 @@
 		:dark="darkmode"
 		:breakpoint="640"
 		style="height:50px"
+		class="mx-auto max-w-7xl"
 	>
 	</ProfileMenu>
 	<TopMenu
-		class="shadow sticky"
+		class="border-b-2 mx-auto max-w-7xl sticky"
 		:dark="darkmode"
 		@darkmode="darkmode=$event"
 		:breakpoint="640"
@@ -68,11 +69,11 @@
 			</svg></template>
 	</TopMenu>
 	<div
-		class="max-w-full max-w-screen sm:flex-row flex-col w-full relative flex"
+		class="mx-auto max-w-7xl max-w-screen sm:flex-row flex-col w-full relative flex"
 		style="position:relative"
 	>
 		<SideMenu
-			class="border-gray-400 border-r border-solid order-1 sticky sm:w-full top-0 sm:inline-flex"
+			class="order-1 sticky sm:w-full top-0 sm:inline-flex"
 			:dark="darkmode"
 			:breakpoint="640"
 		>
@@ -109,7 +110,7 @@
 			style="min-height:calc(100vh - 320px)"
 		/>
 		<SideMenu
-			class="border-gray-400 border-l border-solid sticky inline-flex sm:order-3 order-2 sm:w-full top-0 sm:inline-flex"
+			class="sticky inline-flex sm:order-3 order-2 sm:w-full top-0 sm:inline-flex"
 			:dark="darkmode"
 			:breakpoint="640"
 			:align="'right'"
@@ -167,11 +168,20 @@
 		},
 		data: () => ({
 			darkmode: false
-		})
+		}),
+		computed: {
+			bgcolor() {
+				return this.darkmode ? 'rgba(240,240,240,1)' : 'rgba(240,240,240,1)';
+			}
+		}
 	};
 
 </script>
 <style>
+	body {
+		background-color: v-bind(bgcolor);
+	}
+
 	@media only screen and (max-width: 640px) {
 		.main-view {
 			min-height: calc(100vh - 360px) !important;
