@@ -6,7 +6,10 @@
 		class="mx-auto max-w-7xl"
 	>
 	</ProfileMenu>
-	<div class="border-t-2 border-b sticky">
+	<div
+		class="border-t-2 border-b sticky"
+		:style="'border-color:' + darkmode ? '#000' : ''"
+	>
 		<TopMenu
 			class="mx-auto max-w-7xl"
 			:dark="darkmode"
@@ -169,11 +172,12 @@
 			TopMenu: TopMenu
 		},
 		data: () => ({
-			darkmode: false
+			darkmode: false,
+			bgcolor: 'rgba(240,240,240,1)'
 		}),
-		computed: {
-			bgcolor() {
-				return this.darkmode ? 'rgba(240,240,240,1)' : 'rgba(240,240,240,1)';
+		watch: {
+			darkmode() {
+				this.bgcolor = this.darkmode ? '#4B4B4B' : 'rgba(240,240,240,1)';
 			}
 		}
 	};
