@@ -147,7 +147,7 @@
 	</div>
 	<footer
 		class="justify-center items-center inline-flex p-6 w-full"
-		:style="{ 'background-color': darkmode ? 'rgba(75,75,75,1)' : 'rgba(60,60,90,1)', 'color': darkmode ? '#ccc' : '#ddd', 'box-shadow': darkmode ? '0 50vh 0 50vh rgba(75,75,75,1)' : '0 50vh 0 50vh rgba(240,240,240,1)' }"
+		:style="{ 'background-color': darkmode ? 'rgba(25,25,25,1)' : 'rgba(60,60,90,1)', 'color': darkmode ? '#ccc' : '#ddd', 'box-shadow': darkmode ? '0 50vh 0 50vh rgba(75,75,75,1)' : '0 50vh 0 50vh rgba(240,240,240,1)' }"
 		style="height:200px"
 	>
 		<h3 class="text-center">
