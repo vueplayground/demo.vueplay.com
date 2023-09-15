@@ -125,7 +125,7 @@
 			:breakpoint="1200"
 			:align="'right'"
 			:float="true"
-			:background="'white'"
+			:background="'#FDFDFD'"
 		>
 			<li :active="$route.path === '/'">
 				<router-link to="/">
