@@ -79,7 +79,7 @@
 					<img
 						v-if="image"
 						:src="image"
-						class="w-10 h-10 rounded-full"
+						class="w-9 h-9 rounded-full"
 					/>
 					<svg
 						v-else
@@ -295,7 +295,6 @@
 
 	.vp-profilemenu menu>li[active=true] {
 		border-bottom: 3px solid var(--border-color);
-		padding-top: 7px;
 	}
 
 	.vp-profilemenu.dark menu>li[active=true] {
