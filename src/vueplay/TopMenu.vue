@@ -1,6 +1,6 @@
 <template>
 	<div
-		:class="{'vp-mobile': mobile, 'vp-open': open, 'z-20': !open, 'z-30': open, 'dark': darkmode}"
+		:class="{'vp-mobile': mobile, 'vp-open': open, 'z-20': !open, 'z-40': open, 'dark': darkmode}"
 		class="vp-topmenu relative"
 	>
 
