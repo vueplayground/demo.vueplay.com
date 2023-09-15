@@ -3,7 +3,7 @@
 		:dark="darkmode"
 		:breakpoint="640"
 		style="height:50px"
-		class="mx-auto max-w-7xl"
+		class="max-w-screen-2xl mx-auto"
 	>
 	</ProfileMenu>
 	<div
@@ -11,7 +11,7 @@
 		:style="'border-color:' + darkmode ? '#000' : ''"
 	>
 		<TopMenu
-			class="mx-auto max-w-7xl"
+			class="max-w-screen-2xl mx-auto"
 			:dark="darkmode"
 			@darkmode="darkmode=$event"
 			:breakpoint="640"
@@ -74,7 +74,7 @@
 		</TopMenu>
 	</div>
 	<div
-		class="mx-auto max-w-7xl max-w-screen sm:flex-row flex-col w-full relative flex"
+		class="max-w-screen-2xl mx-auto max-w-screen sm:flex-row flex-col w-full relative flex"
 		style="position:relative"
 	>
 		<SideMenu
@@ -117,9 +117,10 @@
 		<SideMenu
 			class="sticky inline-flex sm:order-3 order-2 sm:w-full top-0 sm:inline-flex"
 			:dark="darkmode"
-			:breakpoint="640"
+			:breakpoint="1200"
 			:align="'right'"
 			:float="true"
+			:background="'white'"
 		>
 			<li :active="$route.path === '/'">
 				<router-link to="/">
