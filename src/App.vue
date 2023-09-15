@@ -120,7 +120,7 @@
 			:breakpoint="1200"
 			:align="'right'"
 			:float="true"
-			:background="'transparen'"
+			:background="'transparent'"
 		>
 			<li :active="$route.path === '/'">
 				<router-link to="/">
@@ -188,7 +188,7 @@
 </script>
 <style>
 	body {
-		background-color: v-bind(bgcolor);
+		background-color: v-bind('bgcolor');
 	}
 
 	@media only screen and (max-width: 640px) {
