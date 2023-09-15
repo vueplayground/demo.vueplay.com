@@ -1,4 +1,4 @@
-""<template>
+<template>
 	<div
 		:class="{'dark': darkmode}"
 		class="vp-carousel relative"
