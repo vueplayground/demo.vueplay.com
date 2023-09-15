@@ -6,7 +6,7 @@
 		class="mx-auto max-w-7xl"
 	>
 	</ProfileMenu>
-	<div class="border-b-2 sticky">
+	<div class="border-t-2 border-b sticky">
 		<TopMenu
 			class="mx-auto max-w-7xl"
 			:dark="darkmode"

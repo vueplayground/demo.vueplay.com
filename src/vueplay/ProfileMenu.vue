@@ -213,12 +213,10 @@
 		width: 100%;
 		height: 54px;
 		background-color: var(--bg-color);
-		border-bottom: 2px solid var(--button-bg-hover-color);
 	}
 
 	.vp-profilemenu.dark {
 		background-color: var(--dark-bg-color);
-		border-bottom: 2px solid var(--dark-button-bg-hover-color);
 	}
 
 	.vp-profilemenu.vp-mobile.vp-open {
