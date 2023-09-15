@@ -13,6 +13,9 @@
 				<h2 class="pb-6">
 					This is a secret
 				</h2>
+				<h2 class="pb-6">
+					Mathias er sykt rå i kran
+				</h2>
 				<address>
 					<label for="">Address</label><br /><a
 						href="mailto: company@example.com"
