@@ -222,6 +222,10 @@
 		width: 50px;
 		max-width: 50px;
 		right: 0px;
+		background-color: transparent;
+	}
+	.vp-rightmenu.vp-mobile:not(.vp-open) .vp-mobile-icon {
+		background-color: transparent;
 	}
 
 	.vp-rightmenu.vp-mobile.vp-open {
