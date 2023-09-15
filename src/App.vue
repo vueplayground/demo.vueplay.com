@@ -8,7 +8,7 @@
 	</ProfileMenu>
 	<div
 		class="border-t-2 border-b sticky"
-		:style="'border-color:' + darkmode ? '#000' : ''"
+		:style="'border-color:' + (darkmode ? '#555' : '')"
 	>
 		<TopMenu
 			class="max-w-screen-2xl mx-auto"
