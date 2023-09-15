@@ -1,5 +1,8 @@
 <template>
-	<div class="border-t-4 border-violet-400 w-full">
+	<div
+		class="border-t-4 w-full"
+		style="border-color:#e89292"
+	>
 		<ProfileMenu
 			:dark="darkmode"
 			:breakpoint="640"
