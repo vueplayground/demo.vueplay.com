@@ -114,13 +114,13 @@
 			class="overflow-auto border-gray-300 border-b border-solid shadow-slate-200 sm:order-2 grow order-3 main-view"
 			style="min-height:calc(100vh - 320px)"
 		/>
-		<SideMenu
+		<RightMenu
 			class="sticky inline-flex sm:order-3 order-2 sm:w-full top-0 sm:inline-flex"
 			:dark="darkmode"
 			:breakpoint="1200"
 			:align="'right'"
 			:float="true"
-			:background="'white'"
+			:background="'transparen'"
 		>
 			<li :active="$route.path === '/'">
 				<router-link to="/">
@@ -150,7 +150,7 @@
 					<li>List item 3</li>
 				</ul>
 			</li>
-		</SideMenu>
+		</RightMenu>
 	</div>
 	<footer
 		class="justify-center items-center inline-flex p-6 w-full"
@@ -164,10 +164,12 @@
 </template>
 <script>
 	import SideMenu from '@/vueplay/SideMenu.vue';
+	import RightMenu from '@/vueplay/RightMenu.vue';
 	import ProfileMenu from '@/vueplay/ProfileMenu.vue';
 	import TopMenu from '@/vueplay/TopMenu.vue';
 	export default {
 		components: {
+			RightMenu: RightMenu,
 			SideMenu: SideMenu,
 			ProfileMenu: ProfileMenu,
 			TopMenu: TopMenu
