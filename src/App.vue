@@ -105,7 +105,7 @@
 				</ul>
 			</li>
 		</SideMenu><router-view
-			class="border-gray-300 border-b border-solid shadow-slate-200 sm:order-2 grow order-3"
+			class="border-gray-300 border-b border-solid shadow-slate-200 sm:order-2 grow order-3 main-view"
 			style="min-height:calc(100vh - 320px)"
 		/>
 		<SideMenu
@@ -171,4 +171,11 @@
 	};
 
 </script>
-<style></style>
+<style>
+	@media only screen and (max-width: 640px) {
+		.main-view {
+			min-height: calc(100vh - 360px) !important;
+		}
+	}
+
+</style>
