@@ -1,6 +1,6 @@
 <template>
 	<div
-		class="sm:px-6 w-full max-w-full bg-slate-50 flex flex-col overflow-auto"
+		class="sm:p-6 w-full max-w-full bg-slate-50 flex flex-col overflow-auto"
 		style="position:relative"
 	>
 		<Carousel

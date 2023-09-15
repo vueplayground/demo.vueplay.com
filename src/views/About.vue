@@ -1,5 +1,5 @@
 <template v-for="i in 8">
-	<div class="bg-slate-50">
+	<div class="bg-slate-50 py-6">
 		<header>
 			<h1 class="pt-12 text-center text-6xl mb-6">
 				About
