@@ -1,13 +1,15 @@
 <template>
-	<ProfileMenu
-		:dark="darkmode"
-		:breakpoint="640"
-		style="height:50px"
-		class="max-w-screen-2xl mx-auto"
-	>
-	</ProfileMenu>
+	<div class="border-t-4 border-violet-400 w-full">
+		<ProfileMenu
+			:dark="darkmode"
+			:breakpoint="640"
+			style="height:50px"
+			class="max-w-screen-2xl mx-auto"
+		>
+		</ProfileMenu>
+	</div>
 	<div
-		class="border-t-2 border-b sticky top-0 z-3"
+		class="border-t-2 border-b sticky top-0 z-30"
 		:style="'border-color:' + (darkmode ? '#555' : '')"
 	>
 		<TopMenu
