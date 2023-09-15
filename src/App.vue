@@ -7,7 +7,7 @@
 	>
 	</ProfileMenu>
 	<div
-		class="border-t-2 border-b sticky"
+		class="border-t-2 border-b sticky top-0"
 		:style="'border-color:' + (darkmode ? '#555' : '')"
 	>
 		<TopMenu
@@ -15,7 +15,7 @@
 			:dark="darkmode"
 			@darkmode="darkmode=$event"
 			:breakpoint="640"
-			style="top:-0.5px;height:70px"
+			style="height:70px"
 		>
 			<template v-slot:logo="">
 				<div
@@ -187,8 +187,7 @@
 
 </script>
 <style>
-	body,
-	#app {
+	body {
 		background-color: rgba(240, 240, 240, 1);
 	}
 
