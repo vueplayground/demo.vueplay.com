@@ -120,7 +120,7 @@
 			style="min-height:calc(100vh - 320px)"
 		/>
 		<RightMenu
-			class="sticky inline-flex sm:order-3 order-2 sm:w-full top-0 sm:inline-flex"
+			class="sticky inline-flex sm:order-3 order-2 sm:w-full top-0 sm:inline-flex z-20"
 			:dark="darkmode"
 			:breakpoint="1200"
 			:align="'right'"
