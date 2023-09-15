@@ -10,36 +10,12 @@
 				class="px-4"
 				@click="open = !open"
 			>
-				<svg
-					v-if="float"
-					xmlns="http://www.w3.org/2000/svg"
-					fill="none"
-					viewBox="0 0 24 24"
-					stroke-width="1.5"
-					stroke="currentColor"
-					class="w-6 h-6"
-				>
-					<path
-						stroke-linecap="round"
-						stroke-linejoin="round"
-						d="M12 6.75a.75.75 0 110-1.5.75.75 0 010 1.5zM12 12.75a.75.75 0 110-1.5.75.75 0 010 1.5zM12 18.75a.75.75 0 110-1.5.75.75 0 010 1.5z"
-					/>
+				<svg v-if="float" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+					<path stroke-linecap="round" stroke-linejoin="round" d="M12 6.75a.75.75 0 110-1.5.75.75 0 010 1.5zM12 12.75a.75.75 0 110-1.5.75.75 0 010 1.5zM12 18.75a.75.75 0 110-1.5.75.75 0 010 1.5z" />
 				</svg>
 
-				<svg
-					v-else
-					xmlns="http://www.w3.org/2000/svg"
-					fill="none"
-					viewBox="0 0 24 24"
-					stroke-width="1.5"
-					stroke="currentColor"
-					class="w-6 h-6"
-				>
-					<path
-						stroke-linecap="round"
-						stroke-linejoin="round"
-						d="M3.75 9h16.5m-16.5 6.75h16.5"
-					/>
+				<svg v-else xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+					<path stroke-linecap="round" stroke-linejoin="round" d="M3.75 9h16.5m-16.5 6.75h16.5" />
 				</svg>
 			</button>
 		</div>
@@ -51,29 +27,35 @@
 						Home
 					</router-link>
 				</li>
-				<li>
+				<li :active="true">
 					<span @click="alert('About')">
 						About
 					</span>
+					<ul>
+	
+						<li>
+							<span>Docs</span>
+							<ul>
+
+								<li>
+									<span>How it works</span>
+								</li>
+							</ul>
+						</li>
+
+					</ul>
 				</li>
-				<li>
+				<li :active="true">
 					<router-link to="/more">
 						More
 					</router-link>
 					<ul>
+
 						<li>
-							<router-link to="/blog">
-								Blog
-							</router-link>
-						</li>
-						<li>
-							<span>Docs</span>
+							<span>Blog</span>
 							<ul>
-								<li>
+								<li :active="true">
 									<span>Introduction</span>
-								</li>
-								<li>
-									<span>How it works</span>
 								</li>
 							</ul>
 						</li>
@@ -225,7 +207,7 @@
 	}
 
 	.vp-sidemenu.vp-mobile.vp-open {
-		position: fixed !important;
+		position: fixed!important;
 		top: 0px;
 		left: 0px;
 		width: 100%;
@@ -237,12 +219,21 @@
 		justify-content: flex-end;
 	}
 
-	.vp-sidemenu menu>li[active=true] {
+	.vp-sidemenu menu>li[active=true]:not(:has(ul)) {
 		border-bottom: 3px solid var(--border-color);
-		padding-top: 12px;
 	}
 
-	.vp-sidemenu.dark menu>li[active=true] {
+	.vp-sidemenu.dark menu>li[active=true]:not(:has(ul)) {
+		border-bottom: 3px solid var(--dark-border-color);
+	}
+
+	.vp-sidemenu menu ul li[active=true] > *:not(ul):first-child,
+	.vp-sidemenu menu > li[active=true]:has(ul):not(:has(li[active=true])) > *:not(ul):first-child {
+		border-bottom: 3px solid var(--border-color);
+	}
+
+	.vp-sidemenu.dark menu ul li[active=true] > *:not(ul):first-child,
+	.vp-sidemenu.dark menu > li[active=true]:has(ul):not(:has(li[active=true])) > *:not(ul):first-child {
 		border-bottom: 3px solid var(--dark-border-color);
 	}
 
