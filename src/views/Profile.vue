@@ -2,7 +2,7 @@
 	<div class="bg-slate-50 py-6">
 		<header>
 			<h1 class="text-6xl mt-12 mb-6">
-				Contact
+				Profile
 			</h1>
 		</header>
 		<main>
