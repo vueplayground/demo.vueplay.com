@@ -16,6 +16,10 @@ const routes = [{
         component: () => import('@/views/Contact.vue')
     },
     {
+        path: '/profile',
+        component: () => import('@/views/Profile.vue')
+    },
+    {
         path: '/more',
         children: [{
             path: 'secret',
