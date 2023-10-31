@@ -111,35 +111,43 @@
 			},
 			color: {
 				type: String,
-				default: 'rgba(14, 58, 62, 1)'
+				default: 'rgba(14, 58, 62, 1)',
+				controller: 'color'
 			},
 			background: {
 				type: String,
-				default: 'rgba(240,240,240,1)'
+				default: 'rgba(240,240,240,1)',
+				controller: 'color'
 			},
 			hover: {
 				type: String,
-				default: 'rgba(220,220,220,1)'
+				default: 'rgba(220,220,220,1)',
+				controller: 'color'
 			},
 			border: {
 				type: String,
-				default: 'rgba(251,178,60,1)'
+				default: 'rgba(251,178,60,1)',
+				controller: 'color'
 			},
 			colorDark: {
 				type: String,
-				default: 'rgba(240,240,240,1)'
+				default: 'rgba(240,240,240,1)',
+				controller: 'color'
 			},
 			backgroundDark: {
 				type: String,
-				default: 'rgba(75,75,75,1)'
+				default: 'rgba(75,75,75,1)',
+				controller: 'color'
 			},
 			hoverDark: {
 				type: String,
-				default: 'rgba(50,50,50,1)'
+				default: 'rgba(50,50,50,1)',
+				controller: 'color'
 			},
 			borderDark: {
 				type: String,
-				default: 'rgba(130,130,130,1)'
+				default: 'rgba(130,130,130,1)',
+				controller: 'color'
 			},
 			align: {
 				type: String,

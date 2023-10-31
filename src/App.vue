@@ -86,6 +86,10 @@
 			class="order-1 sticky sm:w-full top-0 sm:inline-flex"
 			:dark="darkmode"
 			:breakpoint="640"
+			color="#ffffffff"
+			border="#e32095ff"
+			:hover="'#6ea7e0ff'"
+			:background="'#796b80ff'"
 		>
 			<li :active="$route.path === '/'">
 				<router-link to="/">
