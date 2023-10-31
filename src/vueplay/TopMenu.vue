@@ -30,7 +30,6 @@
 				</router-view>
 			</slot>
 		</div>
-
 		<menu @click="open=false">
 			<slot>
 				<li :active="true">
@@ -88,7 +87,6 @@
 				</li>
 			</slot>
 		</menu>
-
 		<div class="vp-end-menu">
 			<div class="vp-divider" />
 			<slot name="end-before"></slot>
@@ -108,9 +106,8 @@
 							stroke-linejoin="round"
 							d="M21.752 15.002A9.718 9.718 0 0118 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 003 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 009.002-5.998z"
 						/>
-					</svg>
-					<svg
-						v-else
+					</svg> <svg
+						v-else=""
 						xmlns="http://www.w3.org/2000/svg"
 						fill="none"
 						viewBox="0 0 24 24"
@@ -128,7 +125,6 @@
 			</slot>
 			<slot name="end-after"></slot>
 		</div>
-
 		<div class="vp-mobile-icon">
 			<button
 				class="px-3"
@@ -145,12 +141,10 @@
 						d="M3 6.75A.75.75 0 013.75 6h16.5a.75.75 0 010 1.5H3.75A.75.75 0 013 6.75zM3 12a.75.75 0 01.75-.75h16.5a.75.75 0 010 1.5H3.75A.75.75 0 013 12zm0 5.25a.75.75 0 01.75-.75h16.5a.75.75 0 010 1.5H3.75a.75.75 0 01-.75-.75z"
 						clip-rule="evenodd"
 					/>
-				</svg>
-			</button>
+				</svg> </button>
 		</div>
 	</div>
 </template>
-
 <script>
 	export default {
 		emits: ['darkmode'],
@@ -203,59 +197,36 @@
 		}),
 		computed: {
 			darkmode() {
-				return this.dark || this.forceDark
+				return this.dark || this.forceDark;
 			}
 		},
 		watch: {
 			open(isOpen) {
 				if (isOpen) {
-					document.body.classList.add('vp-hide-scroll')
+					document.body.classList.add('vp-hide-scroll');
 				} else {
-					document.body.classList.remove('vp-hide-scroll')
+					document.body.classList.remove('vp-hide-scroll');
 				}
 			},
 			forceDark(darkmode) {
-				this.$emit('darkmode', darkmode)
+				this.$emit('darkmode', darkmode);
 			}
 		},
 		created() {
-			this.onResize()
-			window.addEventListener('resize', this.onResize)
+			this.onResize();
+			window.addEventListener('resize', this.onResize);
 		},
 		beforeDestroy() {
-			window.removeEventListener('resize', this.onResize)
+			window.removeEventListener('resize', this.onResize);
 		},
 		methods: {
 			onResize() {
-				this.mobile = window.innerWidth < this.breakpoint
+				this.mobile = window.innerWidth < this.breakpoint;
 			}
 		}
 	};
 
 </script>
-
-<style scoped>
-	/**
-	TODO: Allow slotted selectors when scoped
-	Then the .topmenu class can be skipped
-**/
-	:slotted(li) {
-		color: red;
-		/* Should apply to the slotted scope */
-	}
-
-	:deep(li) {
-		color: green;
-		/* Should affect child components */
-	}
-
-	:global(li) {
-		color: blue;
-		/* Should apply to the global scope */
-	}
-
-</style>
-
 <style>
 	.vp-hide-scroll {
 		overflow: hidden;
