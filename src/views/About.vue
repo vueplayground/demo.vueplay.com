@@ -1,6 +1,6 @@
 <template v-for="i in 8">
 	<div class="flex bg-slate-50">
-		<div class="grow">
+		<div class="max-w-full grow">
 			<header>
 				<h1 class="pt-12 text-center text-6xl mb-6">
 					About
