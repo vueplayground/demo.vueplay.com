@@ -116,7 +116,7 @@
 				</ul>
 			</li>
 		</SideMenu><router-view
-			class="overflow-auto border-gray-300 border-b border-solid shadow-slate-200 sm:order-2 grow order-3 main-view"
+			class="overflow-auto shadow-slate-200 sm:order-2 grow order-3 main-view"
 			style="min-height:calc(100vh - 320px)"
 			:darkmode="darkmode"
 		/>
