@@ -118,44 +118,8 @@
 		</SideMenu><router-view
 			class="overflow-auto border-gray-300 border-b border-solid shadow-slate-200 sm:order-2 grow order-3 main-view"
 			style="min-height:calc(100vh - 320px)"
+			:darkmode="darkmode"
 		/>
-		<RightMenu
-			class="sticky inline-flex sm:order-3 order-2 sm:w-full top-0 sm:inline-flex z-20"
-			:dark="darkmode"
-			:breakpoint="1200"
-			:align="'right'"
-			:float="true"
-			:background="'#FAFAfA'"
-		>
-			<li :active="$route.path === '/'">
-				<router-link to="/">
-					Home
-				</router-link>
-			</li>
-			<li :active="$route.path.includes('/more')">
-				<span>
-					More
-				</span>
-				<ul>
-					<li>List item 1</li>
-					<li :active="$route.path.includes('/more/secret')">
-						List item 2
-						<ul>
-							<li :active="$route.path.includes('/more/secret')">
-								<router-link to="/more/secret">
-									Secret Content
-								</router-link>
-							</li>
-							<li>
-								List item 2
-							</li>
-							<li>List item 3</li>
-						</ul>
-					</li>
-					<li>List item 3</li>
-				</ul>
-			</li>
-		</RightMenu>
 	</div>
 	<footer
 		class="justify-center items-center inline-flex p-6 w-full"
